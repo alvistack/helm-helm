@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+SHELL := /bin/bash
+
+override_dh_auto_build:
+	mkdir -p bin
+	set -ex && \
+		export CGO_ENABLED=0 && \
+		go build \
+			-mod vendor -buildmode pie -v \
+			-ldflags "-s -w -extldflags '-static -lm'\
+				-X helm.sh/helm/v3/internal/version.gitCommit='dbc6d8e20fe1d58d50e6ed30f09a04a77e4c68db' \
+				-X helm.sh/helm/v3/internal/version.gitTreeState='clean' \
+			" \
+			-o ./bin/helm ./cmd/helm
+
+override_dh_auto_install:
+	install -Dpm755 -d debian/tmp/usr/bin
+	install -Dpm755 -t debian/tmp/usr/bin bin/helm
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+
+%:
+	dh $@

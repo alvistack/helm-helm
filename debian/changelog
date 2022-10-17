@@ -1,0 +1,5 @@
+helm (100:3.9.4-1) UNRELEASED; urgency=medium
+
+  * https://github.com/helm/helm/releases/tag/v3.9.4
+
+ -- Wong Hoi Sing Edison <hswong3i@gmail.com>  Thu, 25 Aug 2022 09:19:22 +0800
