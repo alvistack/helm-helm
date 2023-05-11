@@ -1,0 +1,21 @@
+Source: helm
+Section: admin
+Priority: optional
+Standards-Version: 4.5.0
+Maintainer: Wong Hoi Sing Edison <hswong3i@gmail.com>
+Homepage: https://github.com/helm/helm/tags
+Vcs-Browser: https://github.com/alvistack/helm-helm
+Vcs-Git: https://github.com/alvistack/helm-helm.git
+Build-Depends:
+ debhelper,
+ debhelper-compat (= 10),
+ golang-1.20,
+
+Package: helm
+Architecture: amd64
+Description: Kubernetes Package Manager
+ Helm is a tool for managing Charts. Charts are packages of
+ pre-configured Kubernetes resources.
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
