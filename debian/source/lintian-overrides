@@ -1,0 +1,2 @@
+helm source: file-without-copyright-information
+helm source: no-debian-changes
