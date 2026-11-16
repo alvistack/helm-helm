@@ -1,0 +1,6 @@
+helm: copyright-without-copyright-notice
+helm: initial-upload-closes-no-bugs
+helm: no-manual-page
+helm: shared-library-lacks-prerequisites
+helm: statically-linked-binary
+helm: zero-byte-file-in-doc-directory
